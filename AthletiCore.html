@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthletiCore - Ropa Deportiva Premium</title>->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🏃‍♂️</div>
+                <span>AthletiCore</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="showPage('landing')">Inicio</a></li>
+                    <li><a href="#" onclick="showPage('products')">Productos</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline" onclick="showPage('login')">Iniciar Sesión</button>
+                <button class="btn btn-solid" onclick="showPage('cart')">🛒 <span id="cart-indicator">0</span></button>
+                <button class="btn btn-solid" onclick="showPage('register')">Registrarse</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <div id="landing" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AthletiCore</h1>
+                <p>Ropa deportiva premium para atletas que buscan rendimiento y estilo</p>
+                <button class="cta-button" onclick="showPage('products')">Ver Productos</button>
+            </div>
+        </section>
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=250&fit=crop&crop=center');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Camisetas Deportivas</div>
+                            <div class="product-price">$45.000 - $65.000</div>
+                            <button class="add-to-cart" data-product-name="Camisetas Deportivas">Ver Colección</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRLaW72OlFn-CQz4ZT0ishAIXbujuNtsL5LmB1q0P05Gb-0FylbJwYh9bV8CdcbSfVLbleZrx8JAb56vu4sY25KL2ClSQUWUW4RVJYQUAwr');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Shorts & Pantalones</div>
+                            <div class="product-price">$38.000 - $55.000</div>
+                            <button class="add-to-cart" data-product-name="Shorts & Pantalones">Ver Colección</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=250&fit=crop&crop=center');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Calzado Deportivo</div>
+                            <div class="product-price">$85.000 - $150.000</div>
+                            <button class="add-to-cart" data-product-name="Calzado Deportivo">Ver Colección</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTSigQ1g4-GAgd9XpW23FxvN8jhWp9biGeZ-z1qcUpj100vM1SCKLNWYYBpM5raLHo1c5NFUvfmA34qoI9_Insqqcgt17WLPSHuP9uLpkjnujksFocUGlQL');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Accesorios</div>
+                            <div class="product-price">$15.000 - $35.000</div>
+                            <button class="add-to-cart" data-product-name="Accesorios">Ver Colección</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-info">
+            <div class="container">
+                <h3>Información de Contacto</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>3134671660</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>juanchoaponte15@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Ortega Tolima</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register" class="page">
+        <div class="form-page">
+            <div class="form-container">
+                <h2 class="form-title">Registro</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-input" placeholder="Ingresa tu usuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-input" placeholder="Ingresa tu contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-input" placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Apellido</label>
+                        <input type="text" class="form-input" placeholder="Tu apellido">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-input" placeholder="tu@email.com">
+                    </div>
+                    <button type="submit" class="form-button">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <div class="form-page">
+            <div class="form-container">
+                <h2 class="form-title">Iniciar Sesión</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Usuario</label>
+                        <input type="text" class="form-input" placeholder="Tu usuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-input" placeholder="Tu contraseña">
+                    </div>
+                    <button type="submit" class="form-button">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <div class="form-page">
+            <div class="container">
+                <h2 class="section-title" style="color: #1a1a2e; margin-top: 40px;">Accesorios AthletiCore</h2>
+                <div class="products-grid" style="margin-top: 40px;">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPLBRa6bH-IrP8dQAhZhJbVu6FMVP5gXfxvCtk1kgLNcyXYMb6S-_fynk6kILPpNmIz1xk2zEQhN_8yYwj94lvbJLYY_dF5g');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Camiseta Performance</div>
+                            <div class="product-price">$52.000</div>
+                            <button class="add-to-cart" data-product-name="Camiseta Performance">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcROehHzhaTb5DqKr1EO0HZ6BXKNihfThSRRSTYBHttk9MdzmtWUSAjJnLV3lrFc1mE0tVwQcAHW5myof78bxPfFbnXl0BlyGn2ISxhnlt__YVK2UmWU54y_zw');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Pantalón Deportivo</div>
+                            <div class="product-price">$48.000</div>
+                            <button class="add-to-cart" data-product-name="Pantalón Deportivo">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://contents.mediadecathlon.com/p2198059/k$e27a4d6653da1b5b634c0dac393c13d2/short-holgado-mujer-trail-running-negro.jpg');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Shorts Running</div>
+                            <div class="product-price">$35.000</div>
+                            <button class="add-to-cart" data-product-name="Shorts Running">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTiTyTrmVOwWz1MayYsqOoR70-CGLZgeEMiyw6ZflfVcIfdIvY-Mh21MwlL59nHHyF1cLicjTyFwFUGmklufq9c8tS7qJ_9I0BbzM6FjOwlr9a8EhDY9Cpj');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Chaqueta Térmica</div>
+                            <div class="product-price">$75.000</div>
+                            <button class="add-to-cart" data-product-name="Chaqueta Térmica">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT83H86qqacPtqxtHrWWqWgEGK5R-5BVzIA2UxHPd1V8rsY6aecvwf2LYx2R5WkOx0DDT4cGBVBYM4zRoKqXYvQbgBgGk3zhUzJfUKC0a7uar7iXf8QqU7aZA');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Zapatillas Running</div>
+                            <div class="product-price">$120.000</div>
+                            <button class="add-to-cart" data-product-name="Zapatillas Running">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTls-ocgHo1rLWIXRwx2GkW0C7QMIeapISZakzCLkhZnNlNkaXD3DrPJ-STCUZf9pRtvxGQip9HszhgWelVCVnoywfPvKDfmCOVBGmfi_AVk0F4cGAPyGsF');"></div>
+                        <div class="product-info">
+                            <div class="product-name">Sudadera Fitness</div>
+                            <div class="product-price">$58.000</div>
+                            <button class="add-to-cart" data-product-name="Sudadera Fitness">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="product-detail" class="page">
+        <div class="form-page">
+            <div class="form-container" id="product-detail-content">
+                <!-- El detalle del producto se carga dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Page -->
+    <div id="cart" class="page">
+        <div class="form-page">
+            <div class="container">
+                <h2 class="section-title" style="color: #1a1a2e; margin-top: 40px;">Tu Carrito de Compras</h2>
+                <div id="cart-content" class="cart-content">
+                    <!-- El contenido del carrito se cargará dinámicamente aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Page -->
+    <div id="payment" class="page">
+        <div class="form-page">
+            <div class="form-container">
+                <h2 class="form-title">Información de Pago</h2>
+                <div class="form-group">
+                    <label class="form-label">Método de Pago</label>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <span>💳</span>
+                            <span>Crédito/Débito</span>
+                        </div>
+                        <div class="payment-method">
+                            <span>🏦</span>
+                            <span>PSE</span>
+                        </div>
+                        <div class="payment-method">
+                            <span>💸</span>
+                            <span>Contra Entrega</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nombre del Titular</label>
+                    <input type="text" class="form-input" placeholder="Nombre en la tarjeta">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Número de Tarjeta</label>
+                    <input type="text" class="form-input" placeholder="0000 0000 0000 0000">
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label class="form-label">Fecha de Vencimiento</label>
+                        <input type="text" class="form-input" placeholder="MM/AA">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="form-input" placeholder="123">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Código Postal</label>
+                    <input type="text" class="form-input" placeholder="12345">
+                </div>
+                <button class="form-button" style="margin-top: 20px;">Procesar Compra</button>
+                <h4 style="margin: 30px 0 15px; color: #1a1a2e;">2. Certificado de seguridad</h4>
+                <div class="security-badges">
+                    <div class="security-badge">🔒 SSL Seguro</div>
+                    <div class="security-badge">🛡️ Protección PCI</div>
+                    <div class="security-badge">✅ Verificado</div>
+                    <div class="security-badge">🏦 Bancos Seguros</div>
+                    <div class="security-badge">📱 APWG Certified</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Pills -->
+    <div class="nav-pills">
+        <button onclick="showPage('landing')">Inicio</button>
+        <button onclick="showPage('register')">Registro</button>
+        <button onclick="showPage('login')">Login</button>
+        <button onclick="showPage('products')">Productos</button>
+        <button onclick="showPage('payment')">Pagos</button>
+    </div>
+
+    <!-- Message Box -->
+    <div id="message-box" class="message-box"></div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
