@@ -1,4 +1,3 @@
-/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,6 @@ body {
     color: #333;
 }
 
-/* Header Navigation */
 .header {
     background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     color: white;
@@ -95,7 +93,6 @@ body {
     color: #f7931e;
 }
 
-/* Page Containers */
 .page {
     display: none;
     padding-top: 80px;
@@ -105,7 +102,6 @@ body {
     display: block;
 }
 
-/* Hero Section */
 .hero {
     background-image: url('https://images.unsplash.com/photo-1540348721204-7a911717be47?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
@@ -161,7 +157,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Products Section */
 .products-section {
     padding: 50px 0;
 }
@@ -182,7 +177,6 @@ body {
 
 .products-grid {
     display: grid;
-    /* Configurado para 3 columnas en pantallas grandes */
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
@@ -241,7 +235,6 @@ body {
     background-color: #3f3e53;
 }
 
-/* Contact Section */
 .contact-info {
     background-color: #f8f9fa;
     padding: 50px 0;
@@ -269,10 +262,9 @@ body {
     color: #555;
 }
 
-/* Form Pages */
 .form-page {
     padding: 50px 0;
-    min-height: calc(100vh - 80px); /* Ajuste para el header */
+    min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -347,7 +339,6 @@ body {
     flex: 1;
 }
 
-/* Payment Badges */
 .payment-methods {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -402,7 +393,6 @@ body {
         font-size: 2.5rem;
     }
     
-    /* Configurado para 1 columna en pantallas pequeñas */
     .products-grid {
         grid-template-columns: 1fr;
     }
@@ -417,7 +407,6 @@ body {
     }
 }
 
-/* Navigation Pills */
 .nav-pills {
     position: fixed;
     bottom: 30px;
@@ -450,7 +439,6 @@ body {
     color: white;
 }
 
-/* Message Box */
 .message-box {
     position: fixed;
     bottom: 100px;
@@ -478,7 +466,6 @@ body {
     background-color: #dc3545;
 }
 
-/* Nuevos estilos para el carrito */
 .cart-content {
     display: flex;
     flex-direction: column;
