@@ -1,4 +1,3 @@
-// Datos de los productos con un precio numérico para cálculos
 const productData = {
     "Camisetas Deportivas": {
         image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=250&fit=crop",
@@ -53,14 +52,11 @@ const productData = {
 };
 
 let cart = [];
-
-// Funciones para manejar la navegación entre páginas
 function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
     document.getElementById(pageId).classList.add('active');
 
-    // Manejar la navegación de los "pills" para mostrar la página activa
     const navPills = document.querySelectorAll('.nav-pills button');
     navPills.forEach(pill => pill.classList.remove('active'));
     const activePill = document.querySelector(`.nav-pills button[onclick="showPage('${pageId}')"]`);
@@ -68,13 +64,11 @@ function showPage(pageId) {
         activePill.classList.add('active');
     }
     
-    // Si la página es el carrito, renderizar su contenido
     if (pageId === 'cart') {
         renderCart();
     }
 }
 
-// Función para mostrar mensajes temporales
 function showMessage(message, type = 'info') {
     const messageBox = document.getElementById('message-box');
     messageBox.textContent = message;
@@ -84,7 +78,6 @@ function showMessage(message, type = 'info') {
     }, 3000);
 }
 
-// Función para actualizar el indicador del carrito
 function updateCartIndicator() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const cartIndicator = document.getElementById('cart-indicator');
@@ -93,7 +86,6 @@ function updateCartIndicator() {
     }
 }
 
-// Función para añadir productos al carrito
 function addToCart(productName) {
     const existingProduct = cart.find(item => item.name === productName);
     if (existingProduct) {
@@ -113,7 +105,6 @@ function addToCart(productName) {
     showMessage(`¡${productName} añadido al carrito!`, 'success');
 }
 
-// Función para ver los detalles de un producto (y añadir al carrito)
 function viewProduct(productName) {
     const productDetailContent = document.getElementById('product-detail-content');
     const productInfo = productData[productName];
@@ -138,7 +129,6 @@ function viewProduct(productName) {
     }
 }
 
-// Función para quitar un producto del carrito
 function removeFromCart(productName) {
     const productIndex = cart.findIndex(item => item.name === productName);
     if (productIndex > -1) {
@@ -149,7 +139,6 @@ function removeFromCart(productName) {
     }
 }
 
-// Función para renderizar el carrito de compras
 function renderCart() {
     const cartContent = document.getElementById('cart-content');
     cartContent.innerHTML = '';
@@ -203,7 +192,6 @@ function renderCart() {
     cartContent.innerHTML = cartItemsHtml + cartTotalHtml;
 }
 
-// Función para cambiar la cantidad de un producto en el carrito
 function changeQuantity(productName, change) {
     const item = cart.find(i => i.name === productName);
     if (item) {
@@ -217,9 +205,7 @@ function changeQuantity(productName, change) {
     updateCartIndicator();
 }
 
-// Evento de carga del DOM para configurar los listeners
 document.addEventListener("DOMContentLoaded", function() {
-    // Configura los clics para ver los detalles de los productos
     document.querySelectorAll(".add-to-cart").forEach(btn => {
         const productName = btn.dataset.productName;
         if (productName) {
@@ -230,7 +216,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Manejar la selección de métodos de pago
     document.querySelectorAll('.payment-method').forEach(method => {
         method.addEventListener('click', function() {
             document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
@@ -238,14 +223,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Manejar los envíos de formularios con un mensaje personalizado
     document.querySelectorAll('form').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             showMessage('¡Formulario enviado exitosamente!', 'success');
         });
     });
-
-    // Actualiza el indicador del carrito al cargar la página
     updateCartIndicator();
 });
